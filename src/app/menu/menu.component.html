@@ -1,0 +1,17 @@
+<div class="list-group d-lg-block d-md-none d-sm-none d-none sticky-top" style="top: 100px;">
+    <a href="#" class="list-group-item list-group-item-action" [ngClass]="{'active': activeLink === 1}" (click)="activeLink = 1">
+        The current link item
+      </a>
+      <a href="#" class="list-group-item list-group-item-action" [ngClass]="{'active': activeLink === 2}" (click)="activeLink = 2">
+        A second link item
+      </a>
+      <a href="#" class="list-group-item list-group-item-action" [ngClass]="{'active': activeLink === 3}" (click)="activeLink = 3">
+        A third link item
+      </a>
+      <a href="#" class="list-group-item list-group-item-action" [ngClass]="{'active': activeLink === 4}" (click)="activeLink = 4">
+        A fourth link item
+      </a>
+      <a href="#" class="list-group-item list-group-item-action disabled" aria-disabled="true">
+        A disabled link item
+      </a>
+  </div>

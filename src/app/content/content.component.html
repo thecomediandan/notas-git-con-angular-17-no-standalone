@@ -1,0 +1,74 @@
+<section class="container px-3">
+    <article>
+        <h2>Configuraciones</h2>
+
+        <p>
+            Para iniciar un repositorio <b>git</b> utilizamos el código <i>git init</i> el cual nos habilita el directorio donde estamos como un repositorio local donde podremos hacer seguimiento de los cambios realizados en este ambiente.
+        </p>
+        <pre class="prettyprint rounded-3 d-inline-block p-3"><code class="code">git init</code></pre>
+
+        <p>
+            Ahora tendríamos que configurar las credenciales con el cual nos identificaremos y registraremos al momento de realizar cambios al repositorio estas configuraciones las podemos modificar en <i>git config.</i>
+        </p>
+        <pre class="prettyprint rounded-3 d-inline-block p-3"><code class="code">git config --global user.name "[tu_nombre]"
+git config --global user.email "[tu_correo]"</code></pre>
+
+    <p>
+        Las configuraciones también pueden ser locales a nivel repositorio, de todo el sistema a nivel de todos los usuarios del sistema operativo además del global que implica a todo el control del usuario del sistema operativo en uso.
+    </p>
+    <pre class="prettyprint rounded-3 d-inline-block p-3"><code class="code">// Nivel local
+git config --local user.name "[tu_nombre]"
+git config --local user.email "[tu_correo]"
+// Nivel Global
+git config --global user.name "[tu_nombre]"
+git config --global user.email "[tu_correo]"
+// Nivel Sistema
+git config --system user.name "[tu_nombre]"
+git config --system user.email "[tu_correo]"</code></pre>
+
+    <p>
+        Tambien tendremos que tomar en cuenta el como el sistema operativo trata los saltos de línea, el cual es distinto en Linux y Windows, esto debido a que Windows maneja un símbolo oculto el cual no maneja Linux, no tomar en cuenta estos detalles puede causar errores al momento de desplegar las aplicaciones.
+    </p>
+    <pre class="prettyprint rounded-3 d-inline-block p-3"><code class="code">// En Windows
+git config --global core.autocrlf true  
+// En Linux
+git config --global core.autocrlf input</code></pre>
+
+    <p>
+        Podemos visualizar todas las configuraciones del repositorio con el comando <i>git config --list</i>, el cual tambien puede ser utilizado con <i>--local, --global y --system</i>, dependiendo del ambiente a consultar.
+    </p>
+    <pre class="prettyprint rounded-3 d-inline-block p-3"><code class="code">git config --list
+// Otras formas:
+git config --local --list
+git config --global --list
+git config --system --list</code></pre>
+
+    <p>
+        Para consultar que versión de Git tenemos instalado podemos usar el comando <i>git --version o git -v</i>.
+    </p>
+    <pre class="prettyprint rounded-3 d-inline-block p-3"><code class="code">git --version
+// O también
+git -v</code></pre>
+
+    </article>
+
+    <article>
+        <h2>Git Local</h2>
+
+    </article>
+
+    <article>
+        <h2>Git Remoto</h2>
+
+    </article>
+
+    <article>
+        <h2>Tips</h2>
+
+    </article>
+    <script>
+        window.onload = function() {
+          PR.prettyPrint();
+        };
+      </script>
+</section>
