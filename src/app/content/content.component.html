@@ -13,10 +13,10 @@
         <pre class="prettyprint rounded-3 d-inline-block p-3"><code class="code">git config --global user.name "[tu_nombre]"
 git config --global user.email "[tu_correo]"</code></pre>
 
-    <p>
-        Las configuraciones también pueden ser locales a nivel repositorio, de todo el sistema a nivel de todos los usuarios del sistema operativo además del global que implica a todo el control del usuario del sistema operativo en uso.
-    </p>
-    <pre class="prettyprint rounded-3 d-inline-block p-3"><code class="code">// Nivel local
+        <p>
+            Las configuraciones también pueden ser locales a nivel repositorio, de todo el sistema a nivel de todos los usuarios del sistema operativo además del global que implica a todo el control del usuario del sistema operativo en uso.
+        </p>
+        <pre class="prettyprint rounded-3 d-inline-block p-3"><code class="code">// Nivel local
 git config --local user.name "[tu_nombre]"
 git config --local user.email "[tu_correo]"
 // Nivel Global
@@ -26,34 +26,155 @@ git config --global user.email "[tu_correo]"
 git config --system user.name "[tu_nombre]"
 git config --system user.email "[tu_correo]"</code></pre>
 
-    <p>
-        Tambien tendremos que tomar en cuenta el como el sistema operativo trata los saltos de línea, el cual es distinto en Linux y Windows, esto debido a que Windows maneja un símbolo oculto el cual no maneja Linux, no tomar en cuenta estos detalles puede causar errores al momento de desplegar las aplicaciones.
-    </p>
-    <pre class="prettyprint rounded-3 d-inline-block p-3"><code class="code">// En Windows
+        <p>
+            Si quisieramos ver las configuraciones de usuario y email configurados en un repositorio, podemos usar las mismas instrucciones solo que omitiendo los valores de asignación.
+        </p>
+        <pre class="prettyprint rounded-3 d-inline-block p-3"><code class="code">// Nivel local
+git config --local user.name
+git config --local user.email
+// Nivel Global
+git config --global user.name
+git config --global user.email
+// Nivel Sistema
+git config --system user.name
+git config --system user.email</code></pre>
+
+        <p>
+            Tambien tendremos que tomar en cuenta el como el sistema operativo trata los saltos de línea, el cual es distinto en Linux y Windows, esto debido a que Windows maneja un símbolo oculto el cual no maneja Linux, no tomar en cuenta estos detalles puede causar errores al momento de desplegar las aplicaciones.
+        </p>
+        <pre class="prettyprint rounded-3 d-inline-block p-3"><code class="code">// En Windows
 git config --global core.autocrlf true  
 // En Linux
 git config --global core.autocrlf input</code></pre>
 
-    <p>
-        Podemos visualizar todas las configuraciones del repositorio con el comando <i>git config --list</i>, el cual tambien puede ser utilizado con <i>--local, --global y --system</i>, dependiendo del ambiente a consultar.
-    </p>
-    <pre class="prettyprint rounded-3 d-inline-block p-3"><code class="code">git config --list
+        <p>
+            Podemos visualizar todas las configuraciones del repositorio con el comando <i>git config --list</i>, el cual tambien puede ser utilizado con <i>--local, --global y --system</i>, dependiendo del ambiente a consultar.
+        </p>
+        <pre class="prettyprint rounded-3 d-inline-block p-3"><code class="code">git config --list
 // Otras formas:
 git config --local --list
 git config --global --list
 git config --system --list</code></pre>
 
-    <p>
-        Para consultar que versión de Git tenemos instalado podemos usar el comando <i>git --version o git -v</i>.
-    </p>
-    <pre class="prettyprint rounded-3 d-inline-block p-3"><code class="code">git --version
+        <p>
+            Para consultar que versión de Git tenemos instalado podemos usar el comando <i>git --version o git -v</i>.
+        </p>
+        <pre class="prettyprint rounded-3 d-inline-block p-3"><code class="code">git --version
 // O también
 git -v</code></pre>
+
+        <p>
+            Después de iniciado el repositorio tendremos que configurar el archivo <i>.gitignore</i>, este archivo generalmente los FrameWorks los implementan automáticamente, pero en caso de que no, tendremos que configurarlo. Este archivo se encarga de ignorar archivos para la zona de confirmación a no ser que se especifiquen explícitamente. Este archivo generalmente se encuentra en la raíz del proyecto para Git lo detecte.
+        </p>
+        <pre class="prettyprint rounded-3 d-inline-block p-3"><code class="code">// Este archivo puede ignorar directorios
+carpeta/
+// Contenido de carpetas
+carpeta/*
+//  Podemos excluir algunos archivos
+!carpeta/archivo1.txt
+// Agregar archivos expecíficos
+archivo2.txt
+// Archivos concretos
+*.txt
+*.pdf
+// Y otros comodines...</code></pre>
 
     </article>
 
     <article>
         <h2>Git Local</h2>
+
+        <p>
+            Para consultar el estado del repositorio en cualquier momento podemos usar el comando de <i>git status</i>. Los estados posibles de los archivos del repositorio son los de archivos nuevos creados, modificados, eliminados.
+        </p>
+        <pre class="prettyprint rounded-3 d-inline-block p-3"><code class="code">git status
+// O también una versión resumida
+git status -s
+git status --short</code></pre>
+
+        <p>
+            Para poder agregar los archivos a la zona de preparación, podemos usar <i>git add</i>. Esto no guarda los archivos directamente pero los pone en un área donde estamos indicando que son los archivos vamos a confirmar.
+        </p>
+        <pre class="prettyprint rounded-3 d-inline-block p-3"><code class="code">// Para agregar todos
+git add .
+// O agregar determinados archivos
+git add [ruta_archivo] ...
+// Para normalizar errores de Final de Linea (CRLF)
+git add --renormalize .
+git add --renormalize [ruta_archivo] ...</code></pre>
+
+        <p>
+            Para poder eliminar archivo de la zona de preparación por alguna razón, podemos usar <i>git rm --cached</i>. No elimina el archivo pero si lo quita de la lista de archivos que serán confirmados.
+        </p>
+        <pre class="prettyprint rounded-3 d-inline-block p-3"><code class="code">// Para eliminar todos
+git rm --cached .
+// O agregar determinados archivos
+git rm --cached [ruta_archivo] ...</code></pre>
+
+        <p>
+            En caso de querer eliminar los archivos tanto en la zona de preparación como fisicamente del almacenamiento local omitimos la bandera <i>--cached</i>.
+        </p>
+        <pre class="prettyprint rounded-3 d-inline-block p-3"><code class="code">// Para eliminar todos
+git rm .
+// O agregar determinados archivos
+git rm [ruta_archivo] ...</code></pre>
+
+        <p>
+            Ahora para poder confirmar los cambios y estos se guarden en el repositorio tendremos que usar <i>git commit</i>-. Esto confirma los archivos que estan en la zona de preparación.
+        </p>
+        <pre class="prettyprint rounded-3 d-inline-block p-3"><code class="code">// Para introducir comentarios mediante el IDE.
+git commit
+// O agregar los comentarios directamente
+git commit -m "[mensaje/comentario]"</code></pre>
+
+        <p>
+            Si queremos confirmar directamente todos los archivos sin usar <i>git add</i> podemos usar una bandera que simplifica la instrucción.
+        </p>
+        <pre class="prettyprint rounded-3 d-inline-block p-3"><code class="code">// Para introducir comentarios mediante el IDE configurado
+git commit -a
+// O agregar los comentarios directamente
+git commit -m "[mensaje/comentario]" -a</code></pre>
+
+        <p>
+            En caso de sobre escribir el comentario o mensaje del último commit o confirmación podemos usar <i>git commit --amend</i>
+        </p>
+        <pre class="prettyprint rounded-3 d-inline-block p-3"><code class="code">// Para introducir comentarios mediante el IDE configurado
+git commit --amend
+// O agregar los comentarios directamente
+git commit --amend -m "[mensaje/comentario]"</code></pre>
+
+        <p>
+            En caso de la necesidad de deshacer commits, estos tienen una regla para ignorar los commits y es que se deshacerán los commits superior a la posición del puntero HEAD que indica la posición actual del ultimo commit o commit actual posicionado. Esto se puede indicar mediante el comando <i>git reset</i>. El comando tiene 3 tipos de tratamiento mas comunes para el reestablecimiento de un commit, que son: <i>--soft, --mixed y --hard</i>. <i>--soft</i> "elimina" los commits arriba del commit seleccionado mediante el puntero HEAD y los mueve al área de preparación restaurando los cambios realizados en el commit seleccionado. <i>--mixed</i> "elimina" los commits arriba del commit seleccionado mediante el puntero HEAD y no los mueve al área de preparación pero si aparecen modificados y listos para ser agregados al zona de preparación restaurando los cambios realizados en el commit seleccionado. <i>--hard</i> "elimina" los commits arriba del commit seleccionado mediante el puntero HEAD y no los mueve al área de preparación ni aparecen modificados, son descartados en su totalidad restaurando los cambios realizados en el commit seleccionado.
+        </p>
+        <pre class="prettyprint rounded-3 d-inline-block p-3"><code class="code">git reset --soft [hash_commit o HEAD~(Número correspondiente al commit partiendo del ultimo como 0)]
+git reset --mixed [hash_commit o HEAD~(Número correspondiente al commit partiendo del ultimo como 0)]
+git reset --hard [hash_commit o HEAD~(Número correspondiente al commit partiendo del ultimo como 0)]</code></pre>
+
+        <p>
+            En realidad las referencias a los commits no se eliminan solo se ignoran, eso abre la posibilidad de recuperar commits deshechos y se puede recuperar con la ayuda de los comandos <i>git reflog</i> y <i>git reset</i>. <i>git reflog</i> para recuperar la referencia hash del commit y restaurarlo con lo aprendido con <i>git reset [bandera] [hash_commit]</i>.
+        </p>
+        <pre class="prettyprint rounded-3 d-inline-block p-3"><code class="code">// Todas las referencias de todas las ramas
+git reflog
+// Todas las referencias de una rama en especifico
+git reflog [nombre_rama]
+// Limpiar el reflog y entradas antiguas
+git reflog expire</code></pre>     
+
+        <p>
+            Si queremos ver los históricos de los <i>commits</i> podemos usar <i>git log</i>. Hay diversas maneras de ver los históricos con distintas banderas incluso configuraciones de externos en internet (<a href="http://devhints.io/git-log" target="_blank">devhints.io/git-log</a>) que encuentran diversas configuraciones dependendiendo las necesidades para mostrar el historial de cambios en el repositorio.
+        </p>
+        <pre class="prettyprint rounded-3 d-inline-block p-3"><code class="code">// Para ver todos los cambios con su respectivo hash versión estandar
+git log
+// Versión resumida
+git log --oneline
+// Versión detallada
+git log -p
+// Con configuraciones externas
+git log --pretty="format:%h %s %ae"</code></pre>
+
+        <p>
+            En realidad las referencias a los commits no se eliminan solo se ignoran, eso abre la posibilidad de recuperar commits deshechos y se puede recuperar con la ayuda de los comandos <i>git reflog</i> y <i>git reset</i>. <i>git reflog</i> para recuperar la referencia hash del commit y restaurarlo con lo aprendido con <i>git reset [bandera] [hash_commit]</i>.
+        </p>
 
     </article>
 
