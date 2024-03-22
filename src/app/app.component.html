@@ -2,7 +2,9 @@
   <div class="container-fluid">
 
     <div class="navbar-brand col-lg-2 col-md-2 col-sm-3 col-4">
-      <img src="./../assets/angular-svg.svg">
+      <a href="https://angular.io/" target="_blank">
+        <img src="./../assets/angular-svg.svg">
+      </a>
     </div>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -10,16 +12,16 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link" href="#">Configuraciones</a>
+          <a class="nav-link" href="#">Inicio</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Git Local</a>
+          <a class="nav-link" href="#container-git-configuration">Configuraciones</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Git Remoto</a>
+          <a class="nav-link" href="#container-git-basic-operation">Operaciones básicas</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Tips</a>
+          <a class="nav-link" href="#container-git-practice-cases">Casos prácticos</a>
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -55,7 +57,7 @@
       </ul>
       <div class="d-flex col-lg-1 h3 justify-content-end">
         <a
-          href="https://github.com/angular/angular"
+          href="https://github.com/thecomediandan"
           aria-label="Github"
           target="_blank"
           rel="noopener"
@@ -64,7 +66,7 @@
           <i class="bi bi-github"></i>
         </a>
         <a
-          href="https://twitter.com/angular"
+          href="https://twitter.com/DanielDanish1"
           aria-label="Twitter"
           target="_blank"
           rel="noopener"
@@ -73,7 +75,7 @@
           <i class="bi bi-twitter-x"></i>
         </a>
         <a
-          href="https://www.youtube.com/channel/UCbn1OgGei-DV7aSRo_HaAiw"
+          href="https://www.youtube.com/channel/UCE7zY6OODXkdP3YLZXeFLeg"
           target="_blank"
           rel="noopener"
           class="px-2"
@@ -94,23 +96,25 @@
 
     <div class="row justify-content-evenly pt-4">
 
-      <div class="column col-lg-5 col-md-7 col-sm-10 col-10 m-2 bg-dark bg-gradient rounded text-light p-3 d-flex flex-column justify-content-between"  style="height: 13rem;">
-        <div>
+      <div class="card-git card-repository column col-lg-5 col-md-7 col-sm-10 col-10 m-2 rounded text-light p-3 d-flex flex-column justify-content-between"  style="height: 13rem;">
+        <div class="card-content">
           <h1>Git</h1>
           <p>Manejador de versiones de software.</p>
         </div>
-        <div class="w-100 d-flex justify-content-center align-item-center">
-          <button class="btn btn-info"><i class="bi bi-git"></i>&nbsp; Documentación</button>
+        <div class="card-content d-flex justify-content-center align-item-center">
+          <!-- <button class="btn btn-info"><i class="bi bi-git"></i>&nbsp; Documentación</button> -->
+          <a class="btn btn-primary" href="https://git-scm.com/doc" target="_blank" role="button"><i class="bi bi-git"></i>&nbsp; Documentación</a>
         </div>
       </div>
 
-      <div class="column col-lg-5 col-md-7 col-sm-10 col-10 m-2 bg-dark bg-gradient rounded text-light p-3 d-flex flex-column justify-content-between"  style="height: 13rem;">
-        <div>
+      <div class="card-github card-repository column col-lg-5 col-md-7 col-sm-10 col-10 m-2 rounded text-light p-3 d-flex flex-column justify-content-between"  style="height: 13rem;">
+        <div class="card-content">
           <h1>Github</h1>
           <p>Platafoma que usa Git para colaboraciones y repositorios remotos.</p>
         </div>
-        <div class="w-100 d-flex justify-content-center align-item-center">
-          <button class="btn btn-info"><i class="bi bi-github"></i>&nbsp; Página GitHub</button>
+        <div class="card-content d-flex justify-content-center align-item-center">
+          <!-- <button class="btn btn-info"><i class="bi bi-github"></i>&nbsp; Página GitHub</button> -->
+          <a class="btn btn-primary" href="https://github.com" target="_blank" role="button"><i class="bi bi-github"></i>&nbsp; Página GitHub</a>
         </div>
       </div>
 
@@ -118,18 +122,32 @@
 
   </div>
 
-  <div class="container col-lg-11 mt-5 mx-auto d-flex flex-row">
+  <div class="container w-lg-90 mt-5 mx-auto d-flex flex-row">
 
-    <app-menu class="col-lg-4">
+    <app-menu class="col-lg-4 d-lg-block d-md-none d-sm-none d-none sticky-top overflow-y-auto" style="top: 100px; height: 80svh;">
     </app-menu>
 
 
-    <app-content class="col-lg-8">
+    <app-content class="col-lg-8 col-md-10 col-sm-12 col-12">
     </app-content>
 
   </div>
 
 
-</main>
+<button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions">Enable both scrolling & backdrop</button>
 
+<div class="offcanvas offcanvas-start" data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions" aria-labelledby="offcanvasWithBothOptionsLabel">
+  <div class="offcanvas-header">
+    <h5 class="offcanvas-title" id="offcanvasWithBothOptionsLabel">Menú de Git</h5>
+    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  </div>
+  <div class="offcanvas-body">
+    <app-menu></app-menu>
+  </div>
+</div>
+
+</main>
+<footer class="container col-lg-11 mt-5 mx-auto">
+  <!-- TO DO Footer Component -->
+</footer>
 <router-outlet />

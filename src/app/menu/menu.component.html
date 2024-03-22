@@ -1,17 +1,98 @@
-<div class="list-group d-lg-block d-md-none d-sm-none d-none sticky-top" style="top: 100px;">
-    <a href="#" class="list-group-item list-group-item-action" [ngClass]="{'active': activeLink === 1}" (click)="activeLink = 1">
-        The current link item
-      </a>
-      <a href="#" class="list-group-item list-group-item-action" [ngClass]="{'active': activeLink === 2}" (click)="activeLink = 2">
-        A second link item
-      </a>
-      <a href="#" class="list-group-item list-group-item-action" [ngClass]="{'active': activeLink === 3}" (click)="activeLink = 3">
-        A third link item
-      </a>
-      <a href="#" class="list-group-item list-group-item-action" [ngClass]="{'active': activeLink === 4}" (click)="activeLink = 4">
-        A fourth link item
-      </a>
-      <a href="#" class="list-group-item list-group-item-action disabled" aria-disabled="true">
-        A disabled link item
-      </a>
+<div class="container">
+  <div class="list-group">
+  
+    <a href="#" class="list-group-item list-group-item-action disabled text-primary-emphasis" aria-disabled="true">
+      <h5><i class="bi bi-gear-fill"></i>&nbsp;Configuraciones</h5>
+    </a>
+    <a href="#git-version" class="list-group-item list-group-item-action" [ngClass]="{'active': activeLink === 1}" (click)="activeLink = 1">
+      git --version
+    </a>
+    <a href="#git-init" class="list-group-item list-group-item-action" [ngClass]="{'active': activeLink === 2}" (click)="activeLink = 2">
+      git init
+    </a>
+    <a href="#git-config" class="list-group-item list-group-item-action" [ngClass]="{'active': activeLink === 3}" (click)="activeLink = 3">
+      git config
+    </a>
+    <a href="#git-branch" class="list-group-item list-group-item-action" [ngClass]="{'active': activeLink === 4}" (click)="activeLink = 4">
+      git branch
+    </a>
+    <a href="#gitignore" class="list-group-item list-group-item-action" [ngClass]="{'active': activeLink === 5}" (click)="activeLink = 5">
+      gitignore
+    </a>
+  
+    <a href="#" class="list-group-item list-group-item-action disabled text-primary-emphasis" aria-disabled="true">
+      <h5><i class="bi bi-pass-fill"></i>&nbsp;Operaciones básicas</h5>
+    </a>
+    <a href="#git-switch" class="list-group-item list-group-item-action" [ngClass]="{'active': activeLink === 6}" (click)="activeLink = 6">
+      git switch
+    </a>
+    <a href="#git-status" class="list-group-item list-group-item-action" [ngClass]="{'active': activeLink === 7}" (click)="activeLink = 7">
+      git status
+    </a>
+    <a href="#git-add" class="list-group-item list-group-item-action" [ngClass]="{'active': activeLink === 8}" (click)="activeLink = 8">
+      git add
+    </a>
+    <a href="#git-rm" class="list-group-item list-group-item-action" [ngClass]="{'active': activeLink === 9}" (click)="activeLink = 9">
+      git rm
+    </a>
+    <a href="#git-commit" class="list-group-item list-group-item-action" [ngClass]="{'active': activeLink === 10}" (click)="activeLink = 10">
+      git commit
+    </a>
+    <a href="#git-reset" class="list-group-item list-group-item-action" [ngClass]="{'active': activeLink === 11}" (click)="activeLink = 11">
+      git reset
+    </a>
+    <a href="#git-reflog" class="list-group-item list-group-item-action" [ngClass]="{'active': activeLink === 12}" (click)="activeLink = 12">
+      git reflog
+    </a>
+    <a href="#git-checkout" class="list-group-item list-group-item-action" [ngClass]="{'active': activeLink === 13}" (click)="activeLink = 13">
+      git checkout
+    </a>
+    <a href="#git-log" class="list-group-item list-group-item-action" [ngClass]="{'active': activeLink === 14}" (click)="activeLink = 14">
+      git log
+    </a>
+    <a href="#git-remoto" class="list-group-item list-group-item-action" [ngClass]="{'active': activeLink === 15}" (click)="activeLink = 15">
+      git remoto
+    </a>
+    <a href="#git-clone" class="list-group-item list-group-item-action" [ngClass]="{'active': activeLink === 16}" (click)="activeLink = 16">
+      git clone
+    </a>
+    <a href="#git-push" class="list-group-item list-group-item-action" [ngClass]="{'active': activeLink === 17}" (click)="activeLink = 17">
+      git push
+    </a>
+    <a href="#git-pull" class="list-group-item list-group-item-action" [ngClass]="{'active': activeLink === 18}" (click)="activeLink = 18">
+      git pull
+    </a>
+  
+    <a href="#" class="list-group-item list-group-item-action disabled text-primary-emphasis" aria-disabled="true">
+      <h5><i class="bi bi-paperclip"></i>&nbsp;Casos prácticos</h5>
+    </a>
+    <a href="#git-stash" class="list-group-item list-group-item-action" [ngClass]="{'active': activeLink === 19}" (click)="activeLink = 19">
+      git stash
+    </a>
+    <a href="#git-merge" class="list-group-item list-group-item-action" [ngClass]="{'active': activeLink === 20}" (click)="activeLink = 20">
+      git merge
+    </a>
+    <a href="#git-rebase" class="list-group-item list-group-item-action" [ngClass]="{'active': activeLink === 21}" (click)="activeLink = 21">
+      git rebase
+    </a>
+    <a href="#git-restore" class="list-group-item list-group-item-action" [ngClass]="{'active': activeLink === 22}" (click)="activeLink = 22">
+      git restore
+    </a>
+    <a href="#git-revert" class="list-group-item list-group-item-action" [ngClass]="{'active': activeLink === 23}" (click)="activeLink = 23">
+      git revert
+    </a>
+    <a href="#git-diff" class="list-group-item list-group-item-action" [ngClass]="{'active': activeLink === 24}" (click)="activeLink = 24">
+      git diff
+    </a>
+    <a href="#git-tag" class="list-group-item list-group-item-action" [ngClass]="{'active': activeLink === 25}" (click)="activeLink = 25">
+      git tag
+    </a>
+    <a href="#git-fetch" class="list-group-item list-group-item-action" [ngClass]="{'active': activeLink === 26}" (click)="activeLink = 26">
+      git fetch
+    </a>
+    <a href="#git-switch-detach" class="list-group-item list-group-item-action" [ngClass]="{'active': activeLink === 27}" (click)="activeLink = 27">
+      git switch (rama virtual)
+    </a>
+
   </div>
+</div>
