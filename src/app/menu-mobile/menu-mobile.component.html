@@ -1,0 +1,14 @@
+
+<button class="button-menu-mobile btn btn-primary d-lg-none d-xl-none d-xxl-none d-md-block d-sm-block" type="button" (click)="toggleVisibility()"><i class="bi bi-list-ol"></i></button>
+
+<article class="offcanvas-customized text-bg-light p-3" [hidden]="isVisible">
+    <header class="offcanvas-customized-header d-flex flex-row flex-nowrap justify-content-between">
+        <h5>Menu de Git</h5>
+        <button class="btn btn-light" type="button" (click)="toggleVisibility()">
+            <i class="bi bi-x-lg"></i>
+        </button>
+    </header>
+    <section>
+        <app-menu />
+    </section>
+</article>

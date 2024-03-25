@@ -124,30 +124,18 @@
 
   <div class="container w-lg-90 mt-5 mx-auto d-flex flex-row">
 
-    <app-menu class="col-lg-4 d-lg-block d-md-none d-sm-none d-none sticky-top overflow-y-auto" style="top: 100px; height: 80svh;">
-    </app-menu>
+    <app-menu class="col-lg-4 d-lg-block d-md-none d-sm-none d-none sticky-top overflow-y-auto" style="top: 100px; height: 80svh;" />
 
 
-    <app-content class="col-lg-8 col-md-10 col-sm-12 col-12">
-    </app-content>
+    <app-content class="col-lg-8 col-md-10 col-sm-12 col-12" />
 
   </div>
 
-
-<button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions">Enable both scrolling & backdrop</button>
-
-<div class="offcanvas offcanvas-start" data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions" aria-labelledby="offcanvasWithBothOptionsLabel">
-  <div class="offcanvas-header">
-    <h5 class="offcanvas-title" id="offcanvasWithBothOptionsLabel">Menú de Git</h5>
-    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-  </div>
-  <div class="offcanvas-body">
-    <app-menu></app-menu>
-  </div>
-</div>
+  <app-menu-mobile />
 
 </main>
 <footer class="container col-lg-11 mt-5 mx-auto">
   <!-- TO DO Footer Component -->
+  <app-footer />
 </footer>
 <router-outlet />

@@ -1,0 +1,16 @@
+.footer-index a {
+    text-decoration: none;
+    color: white;
+}
+
+.footer-index ul {
+    text-align: start;
+}
+
+.footer-index li {
+    padding-top: 0.5rem;
+}
+
+footer > div {
+    width: 271px;
+}
