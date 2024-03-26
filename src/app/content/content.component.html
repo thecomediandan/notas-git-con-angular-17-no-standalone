@@ -2,7 +2,7 @@
 
     <article id="container-git-configuration">
 
-        <h2><i class="bi bi-gear-fill"></i>&nbsp;Configuraciones</h2>
+        <h2><i [innerHTML]="getIcono('gear')"></i>&nbsp;Configuraciones</h2>
 
         <h3 id="git-version">git --version</h3>
         <p>
@@ -130,7 +130,7 @@ achivo_?.txt
 
     <article id="container-git-basic-operation">
 
-        <h2><i class="bi bi-pass-fill"></i>&nbsp;Operaciones básicas</h2>
+        <h2><i [innerHTML]="getIcono('tasks')"></i>&nbsp;Operaciones básicas</h2>
 
         <h3 id="git-switch">git switch</h3>
         <p>
@@ -313,7 +313,7 @@ git pull [nombre_servidor] [nombre_rama]</code></pre>
 
     <article id="container-git-practice-cases">
 
-        <h2><i class="bi bi-paperclip"></i>&nbsp;Casos prácticos</h2>
+        <h2><i [innerHTML]="getIcono('paperclip')"></i>&nbsp;Casos prácticos</h2>
 
         <h3 id="git-stash">git stash</h3>
         <p>

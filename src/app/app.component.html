@@ -3,28 +3,28 @@
 
     <div class="navbar-brand col-lg-2 col-md-2 col-sm-3 col-4">
       <a href="https://angular.io/" target="_blank">
-        <img src="./../assets/angular-svg.svg">
+        <img src="assets/angular-svg.svg">
       </a>
     </div>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <div class="navbar-social collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link" href="#">Inicio</a>
+          <a class="nav-link" [routerLink]="['/']" fragment="start-app">Inicio</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#container-git-configuration">Configuraciones</a>
+          <a class="nav-link" [routerLink]="['/']" fragment="container-git-configuration">Configuraciones</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#container-git-basic-operation">Operaciones básicas</a>
+          <a class="nav-link" [routerLink]="['/']" fragment="container-git-basic-operation">Operaciones básicas</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#container-git-practice-cases">Casos prácticos</a>
+          <a class="nav-link" [routerLink]="['/']" fragment="container-git-practice-cases">Casos prácticos</a>
         </li>
         <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             Links de Angular
           </a>
           <ul class="dropdown-menu">
@@ -62,8 +62,8 @@
           target="_blank"
           rel="noopener"
           class="px-2"
+          [innerHTML]="getIcono('github')"
         >
-          <i class="bi bi-github"></i>
         </a>
         <a
           href="https://twitter.com/DanielDanish1"
@@ -71,23 +71,23 @@
           target="_blank"
           rel="noopener"
           class="px-2"
+          [innerHTML]="getIcono('twitter-x')"
         >
-          <i class="bi bi-twitter-x"></i>
         </a>
         <a
           href="https://www.youtube.com/channel/UCE7zY6OODXkdP3YLZXeFLeg"
           target="_blank"
           rel="noopener"
           class="px-2"
+          [innerHTML]="getIcono('youtube')"
         >
-          <i class="bi bi-youtube"></i>
         </a>
       </div>
     </div>
   </div>
 </nav>
 
-<main class="container d-flex flex-column col-lg-10 col-md-11 col-sm-12 col-12 mx-auto" style="padding-top: 100px;">
+<main id="start-app" class="container d-flex flex-column col-lg-10 col-md-11 col-sm-12 col-12 mx-auto" style="padding-top: 100px;">
   <div class="column">
     <div class="container my-3">
       <h1 class="text-center">{{ title }}</h1>
@@ -103,7 +103,7 @@
         </div>
         <div class="card-content d-flex justify-content-center align-item-center">
           <!-- <button class="btn btn-info"><i class="bi bi-git"></i>&nbsp; Documentación</button> -->
-          <a class="btn btn-primary" href="https://git-scm.com/doc" target="_blank" role="button"><i class="bi bi-git"></i>&nbsp; Documentación</a>
+          <a class="btn btn-primary" href="https://git-scm.com/doc" target="_blank" role="button">&nbsp; Documentación</a>
         </div>
       </div>
 
@@ -114,7 +114,7 @@
         </div>
         <div class="card-content d-flex justify-content-center align-item-center">
           <!-- <button class="btn btn-info"><i class="bi bi-github"></i>&nbsp; Página GitHub</button> -->
-          <a class="btn btn-primary" href="https://github.com" target="_blank" role="button"><i class="bi bi-github"></i>&nbsp; Página GitHub</a>
+          <a class="btn btn-primary" href="https://github.com" target="_blank" role="button">&nbsp; Página GitHub</a>
         </div>
       </div>
 

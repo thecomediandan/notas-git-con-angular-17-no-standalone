@@ -1,6 +1,6 @@
 <footer class="w-100 d-flex flex-row flex-wrap justify-content-center bg-primary p-3 text-light text-center">
     <div class="footer-img p-2">
-        <img class="w-100" src="../../assets/img/Logotipo-light.png" alt="" srcset="">
+        <img class="w-100" src="assets/img/Logotipo-light.png" alt="Imagen de Logo">
         <p class="text-center pt-3">
             Creando soluciones y ayuda tecnológica para la sociedad en general.
         </p>
@@ -9,9 +9,9 @@
     <div class="footer-notes p-2">
         <h5>Otras notas</h5>
         <div class="d-flex flex-row flex-wrap justify-content-evenly pt-3">
-            <a class="btn btn-primary" href="https://thecomediandan.github.io/Apuntes-de-Web/content/pag-html.html" role="button"><i class="bi bi-filetype-html fs-2"></i></a>
-            <a class="btn btn-primary" href="https://thecomediandan.github.io/Apuntes-de-Web/content/pag-estilos.html" role="button"><i class="bi bi-filetype-css fs-2"></i></a>
-            <a class="btn btn-primary" href="https://thecomediandan.github.io/Apuntes-de-Web/content/pag-javascript.html" role="button"><i class="bi bi-filetype-js fs-2"></i></a>
+            <a class="btn btn-primary" href="https://thecomediandan.github.io/Apuntes-de-Web/content/pag-html.html" role="button" target="_blank" [innerHTML]="getIcono('html')"></a>
+            <a class="btn btn-primary" href="https://thecomediandan.github.io/Apuntes-de-Web/content/pag-estilos.html" role="button" target="_blank" [innerHTML]="getIcono('css')"></a>
+            <a class="btn btn-primary" href="https://thecomediandan.github.io/Apuntes-de-Web/content/pag-javascript.html" role="button" target="_blank" [innerHTML]="getIcono('javascript')"></a>
         </div>
     </div>
 
@@ -28,9 +28,9 @@
     <div class="footer-social p-2">
         <h5>Redes sociales</h5>
         <div class="d-flex flex-row flex-wrap justify-content-center pt-3">
-            <a class="btn btn-primary" href="https://github.com/thecomediandan" role="button"><i class="bi bi-github fs-2"></i></a>
-            <a class="btn btn-primary mx-2" href="https://twitter.com/DanielDanish1" role="button"><i class="bi bi-twitter-x fs-2"></i></a>
-            <a class="btn btn-primary" href="https://www.youtube.com/channel/UCE7zY6OODXkdP3YLZXeFLeg" role="button"><i class="bi bi-youtube fs-2"></i></a>
+            <a class="btn btn-primary" href="https://github.com/thecomediandan" role="button" target="_blank" [innerHTML]="getIcono('github')"></a>
+            <a class="btn btn-primary mx-2" href="https://twitter.com/DanielDanish1" role="button" target="_blank" [innerHTML]="getIcono('twitter-x')"></a>
+            <a class="btn btn-primary" href="https://www.youtube.com/channel/UCE7zY6OODXkdP3YLZXeFLeg" target="_blank" role="button" [innerHTML]="getIcono('youtube')"></a>
         </div>
     </div>
 </footer>

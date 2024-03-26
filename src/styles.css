@@ -1,1 +1,45 @@
 /* ? Muy importante que puede ser :host pero son configuraciones locales :root es global */
+.footer-social  > div a, .footer-notes > div a, .navbar-social > div a{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}  
+.footer-social  > div a svg, .footer-notes > div a svg, .navbar-social > div a svg{
+    width: 32px;
+    height: 32px;
+}
+.navbar-social > div a svg {
+    width: 24px;
+    height: 24px;
+}
+h2 i svg {
+    width: 24px;
+    height: 24px;
+}
+
+.card-git {
+    position: relative;
+    background-image: url("assets/img/gitbanner.jpg");
+    background-size: cover;
+    background-position: start;
+  }
+  .card-github {
+    position: relative;
+    background-image: url("assets/img/bannergithub.png");
+    background-size: cover;
+    background-position: center;
+  }
+  .card-repository::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 0.5rem;
+    background-color: rgba(0, 0, 0, 0.7 );
+  }
+  .card-repository .card-content {
+    position: relative;
+    z-index: 3;
+  }
