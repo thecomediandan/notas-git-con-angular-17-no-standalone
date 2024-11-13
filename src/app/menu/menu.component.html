@@ -4,93 +4,95 @@
     <a class="list-group-item list-group-item-action disabled text-primary-emphasis" aria-disabled="true">
       <h5><i [innerHTML]="getIcono('gear')"></i>&nbsp;Configuraciones</h5>
     </a>
-    <a [routerLink]="['/']" fragment="git-version" class="list-group-item list-group-item-action" [ngClass]="{'active': activeLink === 1}" (click)="activeLink = 1">
+    <!-- Podemos ejecutar directamente un proceso y no una funcion en el evento click: -->
+     <!-- Por ejemplo: (click)="activeLink = 1" -->
+    <a [routerLink]="['/']" fragment="git-version" class="list-group-item list-group-item-action" [ngClass]="{'active': activeLink === 1}" (click)="refreshMenu(1)">
       git --version
     </a>
-    <a [routerLink]="['/']" fragment="git-init" class="list-group-item list-group-item-action" [ngClass]="{'active': activeLink === 2}" (click)="activeLink = 2">
+    <a [routerLink]="['/']" fragment="git-init" class="list-group-item list-group-item-action" [ngClass]="{'active': activeLink === 2}" (click)="refreshMenu(2)">
       git init
     </a>
-    <a [routerLink]="['/']" fragment="git-config" class="list-group-item list-group-item-action" [ngClass]="{'active': activeLink === 3}" (click)="activeLink = 3">
+    <a [routerLink]="['/']" fragment="git-config" class="list-group-item list-group-item-action" [ngClass]="{'active': activeLink === 3}" (click)="refreshMenu(3)">
       git config
     </a>
-    <a [routerLink]="['/']" fragment="git-branch" class="list-group-item list-group-item-action" [ngClass]="{'active': activeLink === 4}" (click)="activeLink = 4">
+    <a [routerLink]="['/']" fragment="git-branch" class="list-group-item list-group-item-action" [ngClass]="{'active': activeLink === 4}" (click)="refreshMenu(4)">
       git branch
     </a>
-    <a [routerLink]="['/']" fragment="gitignore" class="list-group-item list-group-item-action" [ngClass]="{'active': activeLink === 5}" (click)="activeLink = 5">
+    <a [routerLink]="['/']" fragment="gitignore" class="list-group-item list-group-item-action" [ngClass]="{'active': activeLink === 5}" (click)="refreshMenu(5)">
       gitignore
     </a>
   
     <a class="list-group-item list-group-item-action disabled text-primary-emphasis" aria-disabled="true">
       <h5><i [innerHTML]="getIcono('tasks')"></i>&nbsp;Operaciones básicas</h5>
     </a>
-    <a [routerLink]="['/']" fragment="git-switch" class="list-group-item list-group-item-action" [ngClass]="{'active': activeLink === 6}" (click)="activeLink = 6">
+    <a [routerLink]="['/']" fragment="git-switch" class="list-group-item list-group-item-action" [ngClass]="{'active': activeLink === 6}" (click)="refreshMenu(6)">
       git switch
     </a>
-    <a [routerLink]="['/']" fragment="git-status" class="list-group-item list-group-item-action" [ngClass]="{'active': activeLink === 7}" (click)="activeLink = 7">
+    <a [routerLink]="['/']" fragment="git-status" class="list-group-item list-group-item-action" [ngClass]="{'active': activeLink === 7}" (click)="refreshMenu(7)">
       git status
     </a>
-    <a [routerLink]="['/']" fragment="git-add" class="list-group-item list-group-item-action" [ngClass]="{'active': activeLink === 8}" (click)="activeLink = 8">
+    <a [routerLink]="['/']" fragment="git-add" class="list-group-item list-group-item-action" [ngClass]="{'active': activeLink === 8}" (click)="refreshMenu(8)">
       git add
     </a>
-    <a [routerLink]="['/']" fragment="git-rm" class="list-group-item list-group-item-action" [ngClass]="{'active': activeLink === 9}" (click)="activeLink = 9">
+    <a [routerLink]="['/']" fragment="git-rm" class="list-group-item list-group-item-action" [ngClass]="{'active': activeLink === 9}" (click)="refreshMenu(9)">
       git rm
     </a>
-    <a [routerLink]="['/']" fragment="git-commit" class="list-group-item list-group-item-action" [ngClass]="{'active': activeLink === 10}" (click)="activeLink = 10">
+    <a [routerLink]="['/']" fragment="git-commit" class="list-group-item list-group-item-action" [ngClass]="{'active': activeLink === 10}" (click)="refreshMenu(10)">
       git commit
     </a>
-    <a [routerLink]="['/']" fragment="git-reset" class="list-group-item list-group-item-action" [ngClass]="{'active': activeLink === 11}" (click)="activeLink = 11">
+    <a [routerLink]="['/']" fragment="git-reset" class="list-group-item list-group-item-action" [ngClass]="{'active': activeLink === 11}" (click)="refreshMenu(11)">
       git reset
     </a>
-    <a [routerLink]="['/']" fragment="git-reflog" class="list-group-item list-group-item-action" [ngClass]="{'active': activeLink === 12}" (click)="activeLink = 12">
+    <a [routerLink]="['/']" fragment="git-reflog" class="list-group-item list-group-item-action" [ngClass]="{'active': activeLink === 12}" (click)="refreshMenu(12)">
       git reflog
     </a>
-    <a [routerLink]="['/']" fragment="git-checkout" class="list-group-item list-group-item-action" [ngClass]="{'active': activeLink === 13}" (click)="activeLink = 13">
+    <a [routerLink]="['/']" fragment="git-checkout" class="list-group-item list-group-item-action" [ngClass]="{'active': activeLink === 13}" (click)="refreshMenu(13)">
       git checkout
     </a>
-    <a [routerLink]="['/']" fragment="git-log" class="list-group-item list-group-item-action" [ngClass]="{'active': activeLink === 14}" (click)="activeLink = 14">
+    <a [routerLink]="['/']" fragment="git-log" class="list-group-item list-group-item-action" [ngClass]="{'active': activeLink === 14}" (click)="refreshMenu(14)">
       git log
     </a>
-    <a [routerLink]="['/']" fragment="git-remoto" class="list-group-item list-group-item-action" [ngClass]="{'active': activeLink === 15}" (click)="activeLink = 15">
-      git remoto
+    <a [routerLink]="['/']" fragment="git-remote" class="list-group-item list-group-item-action" [ngClass]="{'active': activeLink === 15}" (click)="refreshMenu(15)">
+      git remote
     </a>
-    <a [routerLink]="['/']" fragment="git-clone" class="list-group-item list-group-item-action" [ngClass]="{'active': activeLink === 16}" (click)="activeLink = 16">
+    <a [routerLink]="['/']" fragment="git-clone" class="list-group-item list-group-item-action" [ngClass]="{'active': activeLink === 16}" (click)="refreshMenu(16)">
       git clone
     </a>
-    <a [routerLink]="['/']" fragment="git-push" class="list-group-item list-group-item-action" [ngClass]="{'active': activeLink === 17}" (click)="activeLink = 17">
+    <a [routerLink]="['/']" fragment="git-push" class="list-group-item list-group-item-action" [ngClass]="{'active': activeLink === 17}" (click)="refreshMenu(17)">
       git push
     </a>
-    <a [routerLink]="['/']" fragment="git-pull" class="list-group-item list-group-item-action" [ngClass]="{'active': activeLink === 18}" (click)="activeLink = 18">
+    <a [routerLink]="['/']" fragment="git-pull" class="list-group-item list-group-item-action" [ngClass]="{'active': activeLink === 18}" (click)="refreshMenu(18)">
       git pull
     </a>
   
     <a class="list-group-item list-group-item-action disabled text-primary-emphasis" aria-disabled="true">
       <h5><i [innerHTML]="getIcono('paperclip')"></i>&nbsp;Casos prácticos</h5>
     </a>
-    <a [routerLink]="['/']" fragment="git-stash" class="list-group-item list-group-item-action" [ngClass]="{'active': activeLink === 19}" (click)="activeLink = 19">
+    <a [routerLink]="['/']" fragment="git-stash" class="list-group-item list-group-item-action" [ngClass]="{'active': activeLink === 19}" (click)="refreshMenu(19)">
       git stash
     </a>
-    <a [routerLink]="['/']" fragment="git-merge" class="list-group-item list-group-item-action" [ngClass]="{'active': activeLink === 20}" (click)="activeLink = 20">
+    <a [routerLink]="['/']" fragment="git-merge" class="list-group-item list-group-item-action" [ngClass]="{'active': activeLink === 20}" (click)="refreshMenu(20)">
       git merge
     </a>
-    <a [routerLink]="['/']" fragment="git-rebase" class="list-group-item list-group-item-action" [ngClass]="{'active': activeLink === 21}" (click)="activeLink = 21">
+    <a [routerLink]="['/']" fragment="git-rebase" class="list-group-item list-group-item-action" [ngClass]="{'active': activeLink === 21}" (click)="refreshMenu(21)">
       git rebase
     </a>
-    <a [routerLink]="['/']" fragment="git-restore" class="list-group-item list-group-item-action" [ngClass]="{'active': activeLink === 22}" (click)="activeLink = 22">
+    <a [routerLink]="['/']" fragment="git-restore" class="list-group-item list-group-item-action" [ngClass]="{'active': activeLink === 22}" (click)="refreshMenu(22)">
       git restore
     </a>
-    <a [routerLink]="['/']" fragment="git-revert" class="list-group-item list-group-item-action" [ngClass]="{'active': activeLink === 23}" (click)="activeLink = 23">
+    <a [routerLink]="['/']" fragment="git-revert" class="list-group-item list-group-item-action" [ngClass]="{'active': activeLink === 23}" (click)="refreshMenu(23)">
       git revert
     </a>
-    <a [routerLink]="['/']" fragment="git-diff" class="list-group-item list-group-item-action" [ngClass]="{'active': activeLink === 24}" (click)="activeLink = 24">
+    <a [routerLink]="['/']" fragment="git-diff" class="list-group-item list-group-item-action" [ngClass]="{'active': activeLink === 24}" (click)="refreshMenu(24)">
       git diff
     </a>
-    <a [routerLink]="['/']" fragment="git-tag" class="list-group-item list-group-item-action" [ngClass]="{'active': activeLink === 25}" (click)="activeLink = 25">
+    <a [routerLink]="['/']" fragment="git-tag" class="list-group-item list-group-item-action" [ngClass]="{'active': activeLink === 25}" (click)="refreshMenu(25)">
       git tag
     </a>
-    <a [routerLink]="['/']" fragment="git-fetch" class="list-group-item list-group-item-action" [ngClass]="{'active': activeLink === 26}" (click)="activeLink = 26">
+    <a [routerLink]="['/']" fragment="git-fetch" class="list-group-item list-group-item-action" [ngClass]="{'active': activeLink === 26}" (click)="refreshMenu(26)">
       git fetch
     </a>
-    <a [routerLink]="['/']" fragment="git-switch-detach" class="list-group-item list-group-item-action" [ngClass]="{'active': activeLink === 27}" (click)="activeLink = 27">
+    <a [routerLink]="['/']" fragment="git-switch-detach" class="list-group-item list-group-item-action" [ngClass]="{'active': activeLink === 27}" (click)="refreshMenu(27)">
       git switch (rama virtual)
     </a>
 

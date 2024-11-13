@@ -1,14 +1,16 @@
 
-<button class="button-menu-mobile btn btn-primary d-lg-none d-xl-none d-xxl-none d-md-block d-sm-block" type="button" (click)="toggleVisibility()"><i [innerHTML]="getIcono('list-deployed')"></i></button>
+<button class="button-menu-mobile btn btn-primary d-lg-none d-xl-none d-xxl-none d-md-block d-sm-block" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasMenuMobile" aria-controls="offcanvasMenuMobile" (click)="setVisibility(false)"><i [innerHTML]="getIcono('list-deployed')"></i></button>
 
-<article class="offcanvas-customized text-bg-light p-3" [hidden]="isVisible">
-    <header class="offcanvas-customized-header d-flex flex-row flex-nowrap justify-content-between">
-        <h5>Menu de Git</h5>
-        <button class="btn btn-light" type="button" (click)="toggleVisibility()">
+<article class="offcanvas offcanvas-start text-bg-light" tabindex="-1" id="offcanvasMenuMobile" aria-labelledby="offcanvasMenuMobileLabel" [hidden]="isVisible">
+    <header class="offcanvas-header d-flex flex-row flex-nowrap justify-content-between">
+        <h5 class="offcanvas-title" id="offcanvasMenuMobileLabel">Menu de Git</h5>
+        <!-- <button class="btn btn-light" type="button" (click)="toggleVisibility()">
             <i [innerHTML]="getIcono('close')"></i>
-        </button>
+        </button> -->
+        <!-- {{isVisible}} -->
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
     </header>
-    <section>
-        <app-menu />
+    <section class="offcanvas-body">
+        <app-menu (closeMobileMenu)="setVisibility($event)"/>
     </section>
 </article>
