@@ -25,3 +25,24 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+
+
+# Mis Notas
+
+- Para empezar con angular lo primero, tener instalado NodeJS con NVM de preferencia
+- Tener instalado el CLI de Angular, con 'npn install -g @angular/cli'
+- En Windows es probable que tengamos problemas de acceso por lo que deberiamos ejecutar:
+'Set-ExecutionPolicy -Scope CurrentUser -ExecutionPolicy RemoteSigned', en Linux simplemente
+con permisos SUDO.
+- Para crear un proyecto hay 2 visiones una es usando la estructura 'standalone' que es la 
+caracteristica principal y de las ultimas versiones de Angular y otra es usando 'NgModule'
+que es una estructura clasica que mantiene la separacion de capas en modulos
+'ng new my-app' y 'ng new my-app --no-standalone' respectivamnete.
+- Ingresamos a la carpeta del proyecto :D
+- Si queremos Bootstrap simplemente 'npm install bootstrap'
+- Para levantar un servidor local 'ng serve'
+- Para desplegar el proyecto en GitHub Pages, construimos la aplicacion 'ng build', agregamos
+las dependencias de GitHub 'ng add angular-cli-ghpages', deplegamos 'ng deploy'
+- Si queremos hacer cambios para GitHub Pages seguimos los pasos anteriores pero sin agregar las
+dependencias de GitHub porque ya lo hicimos :D
+
