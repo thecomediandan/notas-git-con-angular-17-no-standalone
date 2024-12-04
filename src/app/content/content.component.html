@@ -282,10 +282,12 @@ git remote set-url [nombre_servidor] [nueva dirección local o remota]</code></p
 
         <h3 id="git-clone">git clone</h3>
         <p>
-            Para poder clonar o traer un repositorio remoto el que usualmente es compartido mediante una URL de conexión HTTPS o SSH, utilizamos el comando <i>git clone</i>. Esto trae todo un proyecto donde nos brinden una dirección para poder clonarlo y trabajar sobre el. Si no se especifica un directorio donde deseamos se haga la descarga por defecto esta se realiza donde se esta ubicado (./). Por defecto al clonar un repositorio se configura el servidor remoto llamado <i>origin</i>.
+            Para poder clonar o traer un repositorio remoto el que usualmente es compartido mediante una URL de conexión HTTPS o SSH, utilizamos el comando <i>git clone</i>. Esto trae todo un proyecto donde nos brinden una dirección para poder clonarlo y trabajar sobre el, en caso de no querer traer los históricos (commits) y traer solamente el últimos cambios podemos usar la bandera <i>--depth</i> e igualarla al nivel que quisieramos en este caso a 1 <i>--depth=1</i> (generalmente se hace para repositorios grandes donde no se necesite todos los cambios en el histórico). Si no se especifica un directorio donde deseamos se haga la descarga por defecto esta se realiza donde se esta ubicado (./). Por defecto al clonar un repositorio se configura el servidor remoto llamado <i>origin</i>.
         </p>
         <pre class="prettyprint rounded-3 d-inline-block p-3"><code class="code">// Para clonar un proyecto en su rama principal
 git clone [url HTTPS o SSH] [*directorio donde deseamos haga la descarga]
+// Para clonar un proyecto indicando que solo queremos descargar el último cambio
+git clone [url HTTPS o SSH] [*directorio donde deseamos haga la descarga] --depth=1
 // Para clonar un proyecto indicando que rama del proyecto queremos descargar
 git clone --branch [nombre_rama] [url HTTPS o SSH] [*directorio donde deseamos haga la descarga]</code></pre>
 
